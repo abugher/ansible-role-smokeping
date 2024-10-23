@@ -1,0 +1,18 @@
+*** Targets ***
+
+probe = FPing
+
+menu = Top
+title = Network Latency Grapher
+remark = hosted on {{ inventory_hostname }}.{{ domain }}
+
++ All
+menu = All
+title = All the Things
+
+{% for target in groups['monitored'] + groups['monitored-unmanaged'] %}
+++ {{ target }}
+title = {{ target }}
+host = {{ target }}.{{ domain }}
+
+{% endfor %}
