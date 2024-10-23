@@ -4,16 +4,13 @@ probe = FPing
 
 menu = Top
 title = Network Latency Grapher
-remark = Smokeping - synapse.neuronpointer.net
+remark = Smokeping at synapse.neuronpointer.net
 
 + All
-
 menu = All
 title = All the Things
 
 ++ neuron
-
-menu = neuron
 title = neuron
 host = neuron
 

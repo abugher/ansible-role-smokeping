@@ -4,8 +4,14 @@
 - include_tasks:        '../tasks/template_files.yml'
 - include_tasks:        '../tasks/symlinks.yml'
 - include_tasks:        '../tasks/enable_services.yml'
-- include_tasks:        '../tasks/start_services.yml'
-  when:                 install_files_result.changed 
-                        or install_packages_result.changed 
+- include_tasks:        '../tasks/commands.yml'
+  when:                 install_packages_result.changed 
+                        or install_files_result.changed 
+                        or template_files_result.changed 
+                        or symlinks_result.changed 
+- include_tasks:        '../tasks/restart_services.yml'
+  when:                 install_packages_result.changed 
+                        or install_files_result.changed 
+                        or template_files_result.changed 
                         or symlinks_result.changed 
 
