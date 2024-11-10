@@ -50,4 +50,3 @@ restart_services:
   - 'mini-httpd'
   - 'smokeping'
   - 'nginx'
-  - 'nginx'
